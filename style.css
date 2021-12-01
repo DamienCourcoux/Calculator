@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+body {
+    --mainBackground: hsl(222, 26%, 31%);
+    --toggleKeypadBackground: hsl(223, 31%, 20%);
+    --screenBackground: hsl(224, 36%, 15%);
+
+    --keyBackgroundBlue: hsl(225, 21%, 49%);
+    --keyShadowBlue: hsl(224, 28%, 35%);
+    --keyBackgroundToggleRed: hsl(6, 63%, 50%);
+    --keyShadowRed: hsl(6, 70%, 34%);
+    --keyBackgroundGrayish: hsl(30, 25%, 89%);
+    --keyShadowGrayish: hsl(28, 16%, 65%);
+
+    --textBlue: hsl(221, 14%, 31%);
+    --textWhite: #fff;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Spartan", sans-serif;
+    background-color: var(--mainBackground);
+}
+
+/* HEADER */
+/* header {
+    text-align: center;
+} */
+
+.settings {
+    display: grid;
+    grid-template-columns: 150px 80px repeat(3, 25px);
+    grid-template-rows: 15px 30px;
+    color: var(--textWhite);
+}
+.settings_title {
+    grid-column: 1;
+    grid-row: 2;
+}
+.settings_theme {
+    grid-column: 2;
+    grid-row: 2;
+}
+#labelOption1 {
+    grid-column: 3;
+    grid-row: 1;
+}
+#option1 {
+    grid-column: 3;
+    grid-row: 2;
+}
+#labelOption2 {
+    grid-column: 4;
+    grid-row: 1;
+}
+#option2 {
+    grid-column: 4;
+    grid-row: 2;
+}
+#labelOption3 {
+    grid-column: 5;
+    grid-row: 1;
+}
+#option3 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+/* BUTTONS */
+.buttons_container {
+    background: pink;
+}
+.buttons_container-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(4, 30px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.buttons_container-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: 30px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+
+/* ATTRIBUTION */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
