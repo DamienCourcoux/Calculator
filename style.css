@@ -27,6 +27,12 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--mainBackground);
+    color: var(--textWhite);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
 }
 
 /* HEADER */
@@ -35,7 +41,6 @@ main {
     display: grid;
     grid-template-columns: 200px 50px repeat(3, 15px);
     grid-template-rows: 15px 15px;
-    color: var(--textWhite);
     align-items: stretch;
 }
 .settings_title {
@@ -187,8 +192,14 @@ main {
 
 /* ATTRIBUTION */
 .attribution {
-    font-size: 11px;
-    text-align: center;
+    font-size: 1rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .attribution a {
