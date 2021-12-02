@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 
+* {
+    font-family: "Spartan", sans-serif;
+}
+
 body {
     --mainBackground: hsl(222, 26%, 31%);
     --toggleKeypadBackground: hsl(223, 31%, 20%);
@@ -22,29 +26,61 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Spartan", sans-serif;
     background-color: var(--mainBackground);
 }
 
 /* HEADER */
-/* header {
-    text-align: center;
-} */
-
+/* settings */
 .settings {
     display: grid;
-    grid-template-columns: 150px 80px repeat(3, 25px);
-    grid-template-rows: 15px 30px;
+    grid-template-columns: 200px 50px repeat(3, 15px);
+    grid-template-rows: 15px 15px;
     color: var(--textWhite);
+    align-items: stretch;
 }
 .settings_title {
     grid-column: 1;
     grid-row: 2;
+    font-size: 1.2rem;
 }
 .settings_theme {
     grid-column: 2;
     grid-row: 2;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    text-align: right;
+    margin: 0.3rem 0.5rem 0 0;
 }
+.settings label {
+    font-size: .5rem;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+.settings input {
+    margin: 0 auto;
+    display: none;
+}
+
+.settings_input {
+    grid-column: 3 / -1;
+    grid-row: 2;
+    background: var(--toggleKeypadBackground);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+}
+
+.settings_input .toggleOptionTheme {
+    position: absolute;
+    top: 3px;
+    background: var(--keyBackgroundToggleRed);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
 #labelOption1 {
     grid-column: 3;
     grid-row: 1;
@@ -70,24 +106,82 @@ main {
     grid-row: 2;
 }
 
+.settings #option1:checked ~ .toggleOptionTheme {
+    left: 3px;
+}
+
+.settings #option2:checked ~ .toggleOptionTheme {
+    left: 19px;
+}
+
+.settings #option3:checked ~ .toggleOptionTheme {
+    left: 33px;
+}
+
+/* results */
+.result {
+    color: var(--textWhite);
+    background: var(--screenBackground);
+    border-radius: 5px;
+    margin: 1.5rem 0 1rem;
+}
+.result_number {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 25px;
+    font-size: 2rem;
+}
+
 /* BUTTONS */
 .buttons_container {
-    background: pink;
+    background: var(--toggleKeypadBackground);
+    border-radius: 5px;
 }
+
 .buttons_container-numbers {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(4, 30px);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: repeat(4, 55px);
+    grid-template-rows: repeat(4, 35px);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 15px;
+}
+
+.buttons_container-numbers-btn {
+    background: var(--keyBackgroundGrayish);
+    color: var(--textBlue);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttons_container-actions {
     display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: 30px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: repeat(2, 125px);
+    grid-template-rows: 35px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 0 15px 15px;
+}
+
+.buttons_container-actions-btn {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#del, #reset {
+    background: var(--keyBackgroundBlue);
+    color: var(--textWhite);
+    font-size: .7rem;
+}
+
+#equal {
+    background: var(--keyBackgroundToggleRed);
+    color: var(--textWhite);
 }
 
 

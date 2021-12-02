@@ -18,23 +18,26 @@
         <h1 class="settings_title">calc</h1>
         <h2 class="settings_theme">Theme</h2>
         <label for="option1" id="labelOption1">1</label>
-        <input type="radio" checked class="settings_theme--options-option" id="option1" name="option">
         <label for="option2" id="labelOption2">2</label>
-        <input type="radio" class="settings_theme--options-option" id="option2" name="option">
         <label for="option3" id="labelOption3">3</label>
-        <input type="radio" class="settings_theme--options-option" id="option3" name="option">
+        <div class="settings_input">
+          <input type="radio" checked class="settings_theme--options-option" id="option1" name="option">
+          <input type="radio" class="settings_theme--options-option" id="option2" name="option">
+          <input type="radio" class="settings_theme--options-option" id="option3" name="option">
+          <span class="toggleOptionTheme"></span>
+        </div>
       </div>
       <div class="result">
         <p class="result_number">399.981</p>
       </div>
     </header>
-  
+
     <section class="buttons_container">
       <div class="buttons_container-numbers">
         <div class="buttons_container-numbers-btn" id="7">7</div>
         <div class="buttons_container-numbers-btn" id="8">8</div>
         <div class="buttons_container-numbers-btn" id="9">9</div>
-        <div class="buttons_container-numbers-btn" id="del">del</div>
+        <div class="buttons_container-numbers-btn" id="del">DEL</div>
         <div class="buttons_container-numbers-btn" id="4">4</div>
         <div class="buttons_container-numbers-btn" id="5">5</div>
         <div class="buttons_container-numbers-btn" id="6">6</div>
@@ -49,7 +52,7 @@
         <div class="buttons_container-numbers-btn" id="multiply">x</div>
       </div>
       <div class="buttons_container-actions">
-        <div class="buttons_container-actions-btn" id="reset">reset</div>
+        <div class="buttons_container-actions-btn" id="reset">RESET</div>
         <div class="buttons_container-actions-btn" id="equal">=</div>
       </div>
     </section>
