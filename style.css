@@ -4,20 +4,84 @@
     font-family: "Spartan", sans-serif;
 }
 
-body {
+body[data-theme="theme noel"] {
+    --mainBackground: #F23941;
+    --toggleKeypadBackground: #96282f;
+    --screenBackground: #951D26;
+
+    --keyBackgroundFirst: #406D36;
+    --keyShadowFirst: #A3AF97;
+    --keyBackgroundToggleSecond: #C29D5C;
+    --keyShadowSecond: #E2C793;
+    --keyBackgroundThird: #F8F9F3;
+    --keyShadowThird: #c8c9c6;
+
+    --textFirst: #000;
+    --textSecond: #fff;
+
+    color: var(--textSecond);
+}
+#labelOptionNoel {
+    color: var(--mainBackground);
+    grid-column: 2;
+}
+
+body[data-theme="theme one"] {
     --mainBackground: hsl(222, 26%, 31%);
     --toggleKeypadBackground: hsl(223, 31%, 20%);
     --screenBackground: hsl(224, 36%, 15%);
 
-    --keyBackgroundBlue: hsl(225, 21%, 49%);
-    --keyShadowBlue: hsl(224, 28%, 35%);
-    --keyBackgroundToggleRed: hsl(6, 63%, 50%);
-    --keyShadowRed: hsl(6, 70%, 34%);
-    --keyBackgroundGrayish: hsl(30, 25%, 89%);
-    --keyShadowGrayish: hsl(28, 16%, 65%);
+    --keyBackgroundFirst: hsl(225, 21%, 49%);
+    --keyShadowFirst: hsl(224, 28%, 35%);
+    --keyBackgroundToggleSecond: hsl(6, 63%, 50%);
+    --keyShadowSecond: hsl(6, 70%, 34%);
+    --keyBackgroundThird: hsl(30, 25%, 89%);
+    --keyShadowThird: hsl(28, 16%, 65%);
 
-    --textBlue: hsl(221, 14%, 31%);
-    --textWhite: #fff;
+    --textFirst: hsl(221, 14%, 31%);
+    --textSecond: #fff;
+
+    color: var(--textSecond);
+}
+
+body[data-theme="theme two"] {
+    --mainBackground: hsl(0, 0%, 90%);
+    --toggleKeypadBackground: hsl(0, 5%, 81%);
+    --screenBackground: hsl(0, 0%, 93%);
+
+    --keyBackgroundFirst: hsl(185, 42%, 37%);
+    --keyShadowFirst: hsl(185, 58%, 25%);
+    --keyBackgroundToggleSecond: hsl(25, 98%, 40%);
+    --keyShadowSecond: hsl(25, 99%, 27%);
+    --keyBackgroundThird: hsl(45, 7%, 89%);
+    --keyShadowThird: hsl(35, 11%, 61%);
+
+    --textFirst: hsl(60, 10%, 19%);
+    --textSecond: #fff;
+
+    color: var(--textFirst);
+}
+
+body[data-theme="theme three"] {
+    --mainBackground: hsl(268, 75%, 9%);
+    --toggleKeypadBackground: hsl(268, 71%, 12%);
+    --screenBackground: hsl(268, 71%, 12%);
+
+    --keyBackgroundFirst: hsl(281, 89%, 26%);
+    --keyShadowFirst: hsl(285, 91%, 52%);
+    --keyBackgroundToggleSecond: hsl(176, 100%, 44%);
+    --keyShadowSecond: hsl(177, 92%, 70%);
+    --keyBackgroundThird: hsl(268, 47%, 21%);
+    --keyShadowThird: hsl(290, 70%, 36%);
+
+    --textFirst: hsl(52, 100%, 62%);
+    --textSecond: #fff;
+    --textThird: hsl(198, 20%, 13%);
+
+    color: var(--textFirst);
+}
+body[data-theme="theme three"] #equal {
+    color: var(--textThird);
 }
 
 main {
@@ -27,7 +91,6 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--mainBackground);
-    color: var(--textWhite);
 }
 
 .title {
@@ -83,7 +146,7 @@ main {
 .settings_input .toggleOptionTheme {
     position: absolute;
     top: 3px;
-    background: var(--keyBackgroundToggleRed);
+    background: var(--keyBackgroundToggleSecond);
     width: 9px;
     height: 9px;
     border-radius: 50%;
@@ -157,16 +220,16 @@ main {
     padding: 15px;
 }
 
-.buttons_container-numbers-btn {
-    background: var(--keyBackgroundGrayish);
-    color: var(--textBlue);
+.buttons_container-numbers .btn {
+    background: var(--keyBackgroundThird);
+    color: var(--textFirst);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
-    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
-    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
+    box-shadow: 0px 3px 0px 0px var(--keyShadowThird);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowThird);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowThird);
     cursor: pointer;
     padding-top: .2rem;
 }
@@ -180,7 +243,7 @@ main {
     padding: 0 15px 15px;
 }
 
-.buttons_container-actions-btn {
+.buttons_container-actions .btn {
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -189,21 +252,21 @@ main {
     padding-top: .2rem;
 }
 
-#del, #reset {
-    background: var(--keyBackgroundBlue);
-    color: var(--textWhite);
+#btn-del, #btn-reset {
+    background: var(--keyBackgroundFirst);
+    color: var(--textSecond);
     font-size: .7rem;
-    box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
-    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
-    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
+    box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
 }
 
-#equal {
-    background: var(--keyBackgroundToggleRed);
-    color: var(--textWhite);
-    box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
-    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
-    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
+#btn-equal {
+    background: var(--keyBackgroundToggleSecond);
+    color: var(--textSecond);
+    box-shadow: 0px 3px 0px 0px var(--keyShadowSecond);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowSecond);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowSecond);
 }
 
 
@@ -217,6 +280,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
+    color: #000;
 }
 
 .attribution a {

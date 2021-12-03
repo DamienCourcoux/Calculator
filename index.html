@@ -10,7 +10,7 @@
   <title>Calculator | Damien Courcoux</title>
 </head>
 
-<body>
+<body data-theme="theme one">
   <main>
     <div class="title">
       Calculator
@@ -22,40 +22,42 @@
         <label for="option1" id="labelOption1">1</label>
         <label for="option2" id="labelOption2">2</label>
         <label for="option3" id="labelOption3">3</label>
+        <label for="optionNoel" id="labelOptionNoel">noel</label>
         <div class="settings_input">
           <input type="radio" checked class="settings_theme--options-option" id="option1" name="option">
           <input type="radio" class="settings_theme--options-option" id="option2" name="option">
           <input type="radio" class="settings_theme--options-option" id="option3" name="option">
+          <input type="radio" class="settings_theme--options-option" id="optionNoel" name="option">
           <span class="toggleOptionTheme"></span>
         </div>
       </div>
       <div class="result">
-        <p class="result_number">399.981</p>
+        <p class="result_number">0</p>
       </div>
     </header>
 
     <section class="buttons_container">
       <div class="buttons_container-numbers">
-        <div class="buttons_container-numbers-btn" id="7">7</div>
-        <div class="buttons_container-numbers-btn" id="8">8</div>
-        <div class="buttons_container-numbers-btn" id="9">9</div>
-        <div class="buttons_container-numbers-btn" id="del">DEL</div>
-        <div class="buttons_container-numbers-btn" id="4">4</div>
-        <div class="buttons_container-numbers-btn" id="5">5</div>
-        <div class="buttons_container-numbers-btn" id="6">6</div>
-        <div class="buttons_container-numbers-btn" id="plus">+</div>
-        <div class="buttons_container-numbers-btn" id="1">1</div>
-        <div class="buttons_container-numbers-btn" id="2">2</div>
-        <div class="buttons_container-numbers-btn" id="3">3</div>
-        <div class="buttons_container-numbers-btn" id="less">-</div>
-        <div class="buttons_container-numbers-btn" id="dot">.</div>
-        <div class="buttons_container-numbers-btn" id="0">0</div>
-        <div class="buttons_container-numbers-btn" id="divide">/</div>
-        <div class="buttons_container-numbers-btn" id="multiply">x</div>
+        <div class="btn" id="btn-7">7</div>
+        <div class="btn" id="btn-8">8</div>
+        <div class="btn" id="btn-9">9</div>
+        <div class="btn" id="btn-del">DEL</div>
+        <div class="btn" id="btn-4">4</div>
+        <div class="btn" id="btn-5">5</div>
+        <div class="btn" id="btn-6">6</div>
+        <div class="btn" id="btn-plus">+</div>
+        <div class="btn" id="btn-1">1</div>
+        <div class="btn" id="btn-2">2</div>
+        <div class="btn" id="btn-3">3</div>
+        <div class="btn" id="btn-less">-</div>
+        <div class="btn" id="btn-dot">.</div>
+        <div class="btn" id="btn-0">0</div>
+        <div class="btn" id="btn-divide">/</div>
+        <div class="btn" id="btn-multiply">x</div>
       </div>
       <div class="buttons_container-actions">
-        <div class="buttons_container-actions-btn" id="reset">RESET</div>
-        <div class="buttons_container-actions-btn" id="equal">=</div>
+        <div class="btn" id="btn-reset">RESET</div>
+        <div class="btn" id="btn-equal">=</div>
       </div>
     </section>
   </main>
@@ -65,6 +67,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://damiencourcoux.me">Damien Courcoux</a>.
   </footer>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
