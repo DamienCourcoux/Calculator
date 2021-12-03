@@ -31,8 +31,12 @@ main {
 }
 
 .title {
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.title::before {
+    content: "// ";
 }
 
 /* HEADER */
@@ -83,7 +87,19 @@ main {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    transition: all 0.4s ease;
+    transition: all .5s ease;
+}
+
+.settings #option1:checked ~ .toggleOptionTheme {
+    left: 3px;
+}
+
+.settings #option2:checked ~ .toggleOptionTheme {
+    left: 19px;
+}
+
+.settings #option3:checked ~ .toggleOptionTheme {
+    left: 33px;
 }
 
 #labelOption1 {
@@ -109,18 +125,6 @@ main {
 #option3 {
     grid-column: 5;
     grid-row: 2;
-}
-
-.settings #option1:checked ~ .toggleOptionTheme {
-    left: 3px;
-}
-
-.settings #option2:checked ~ .toggleOptionTheme {
-    left: 19px;
-}
-
-.settings #option3:checked ~ .toggleOptionTheme {
-    left: 33px;
 }
 
 /* results */
@@ -160,6 +164,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowGrayish);
+    cursor: pointer;
+    padding-top: .2rem;
 }
 
 .buttons_container-actions {
@@ -176,17 +185,25 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    padding-top: .2rem;
 }
 
 #del, #reset {
     background: var(--keyBackgroundBlue);
     color: var(--textWhite);
     font-size: .7rem;
+    box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowBlue);
 }
 
 #equal {
     background: var(--keyBackgroundToggleRed);
     color: var(--textWhite);
+    box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
+    -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
+    -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowRed);
 }
 
 
