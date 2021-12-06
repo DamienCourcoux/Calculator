@@ -34,8 +34,8 @@ Les utilisateurs doivent être capables de :
 
 ### Liens
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- URL de la solution : [https://www.frontendmentor.io/solutions/calculator-app-frontend-mentor-by-damiencourcoux-sgNhjGaRG](https://www.frontendmentor.io/solutions/calculator-app-frontend-mentor-by-damiencourcoux-sgNhjGaRG)
+- URL du site en direct : [https://calculator-damiencourcoux.netlify.app/](https://calculator-damiencourcoux.netlify.app/)
 
 ## Mon processus
 
