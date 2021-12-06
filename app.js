@@ -30,6 +30,7 @@ btns.forEach((btn) => {
         const id = event.target.id;
         const value = document.querySelector(`#${id}`).textContent;
         const resultNumber = document.querySelector(".result_number");
+        const last = brain[brain.length - 1];
 
         switch (id) {
             case "btn-0":
@@ -42,25 +43,49 @@ btns.forEach((btn) => {
             case "btn-7":
             case "btn-8":
             case "btn-9":
-            case "btn-plus":
-            case "btn-less":
-            case "btn-multiply":
-            case "btn-divide":
             case "btn-dot":
                 if (brain[0] === "0") {
                     brain.pop();
                     brain.push(value);
-                } else if (id === "btn-multiply") {
-                    brain.push("*");
                 } else {
                     brain.push(value);
                 }
                 break;
+            case "btn-plus":
+                if (last === "+" || last === "-" || last === "*" || last === "/") {
+                    brain.pop();
+                }
+                brain.push("+");
+                break;
+            case "btn-less":
+                if (last === "+" || last === "-" || last === "*" || last === "/") {
+                    brain.pop();
+                }
+                brain.push("-");
+                break;
+            case "btn-multiply":
+                if (last === "+" || last === "-" || last === "*" || last === "/") {
+                    brain.pop();
+                }
+                brain.push("*");
+                break;
+            case "btn-divide":
+                if (last === "+" || last === "-" || last === "*" || last === "/") {
+                    brain.pop();
+                }
+                brain.push("/");
+                break;
             case "btn-del":
+                brain.pop();
+                if (brain.length === 0) {
+                    brain.push("0");
+                    resultNumber.style.fontSize = "2rem";
+                }
+                break;
             case "btn-reset":
                 brain = ["0"];
                 if (brain = ["0"]) {
-                    resultNumber.style.fontSize = "2rem"
+                    resultNumber.style.fontSize = "2rem";
                 }
                 break;
             case "btn-equal":
@@ -80,7 +105,81 @@ btns.forEach((btn) => {
             resultNumber.style.fontSize = "1rem";
         }
         if (resultNumber.textContent.length > 20) {
-            resultNumber.style.fontSize = ".7rem"
+            resultNumber.style.fontSize = ".7rem";
         }
     });
+});
+
+document.addEventListener("keydown", (event) => {
+    const resultNumber = document.querySelector(".result_number");
+    const last = brain[brain.length - 1];
+
+    switch (event.key) {
+        case "0":
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case ".":
+            if (brain[0] === "0") {
+                brain.pop();
+                brain.push(event.key);
+            } else {
+                brain.push(event.key);
+            }
+            break;
+        case "+":
+            if (last === "+" || last === "-" || last === "*" || last === "/") {
+                brain.pop();
+            }
+            brain.push("+");
+            break;
+        case "-":
+            if (last === "+" || last === "-" || last === "*" || last === "/") {
+                brain.pop();
+            }
+            brain.push("-");
+            break;
+        case "*":
+            if (last === "+" || last === "-" || last === "*" || last === "/") {
+                brain.pop();
+            }
+            brain.push("*");
+            break;
+        case "/":
+            if (last === "+" || last === "-" || last === "*" || last === "/") {
+                brain.pop();
+            }
+            brain.push("/");
+            break;
+        case "Backspace":
+            brain.pop();
+            if (brain.length === 0) {
+                brain.push("0");
+                resultNumber.style.fontSize = "2rem";
+            }
+            break;
+        case "Enter":
+            const join = brain.join("");
+            const result = eval(join).toString();
+            brain = [result];
+            resultNumber.textContent = result;
+            break;
+        default:
+            break;
+    }
+
+    const join = brain.join("");
+    resultNumber.textContent = join;
+    if (resultNumber.textContent.length > 10) {
+        resultNumber.style.fontSize = "1rem";
+    }
+    if (resultNumber.textContent.length > 20) {
+        resultNumber.style.fontSize = ".7rem";
+    }
 });

@@ -97,6 +97,8 @@ main {
     font-size: 2rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
+    color: var(--keyBackgroundFirst);
+    text-decoration: none;
 }
 .title::before {
     content: "// ";
@@ -203,6 +205,7 @@ main {
     justify-content: flex-end;
     padding: 25px;
     font-size: 2rem;
+    height: 80px;
 }
 
 /* BUTTONS */
@@ -249,7 +252,7 @@ main {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding-top: .2rem;
+    padding-top: .4rem;
 }
 
 #btn-del, #btn-reset {
@@ -259,6 +262,11 @@ main {
     box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
     -webkit-box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
     -moz-box-shadow: 0px 3px 0px 0px var(--keyShadowFirst);
+}
+
+#btn-del {
+    font-size: 2rem;
+    padding-top: 0;
 }
 
 #btn-equal {
